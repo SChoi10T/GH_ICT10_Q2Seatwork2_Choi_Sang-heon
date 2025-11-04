@@ -20,42 +20,46 @@
 </head>
 <body>
     <!-- CONTENT -->
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <h1>Student Grade Calculator</h1>
-        <br>
-        <form>
-            <label>First Name</label>
-            <input type="text" id="fname" placeholder="Enter your first name...">
-            <br><br>
-            <label>Last Name</label>
-            <input type="text" id="lname" placeholder="Enter your surname...">
-            <br><br>
-            <h4>Enter your grades:</h4>
-                <label>Filipino</label>
-                <input type="number" id="filipino" placeholder="Enter...">
-                <br><br>
-                <label>English</label>
-                <input type="number" id="english" placeholder="Enter...">
-                <br><br>
-                <label>Mathematics</label>
-                <input type="number" id="mathematics" placeholder="Enter...">
-                <br><br>
-                <label>Science</label>
-                <input type="number" id="science" placeholder="Enter...">
-                <br><br>
-                <label>Social Studies</label>
-                <input type="number" id="ss" placeholder="Enter...">
-                <br><br>
-                <label>ICT</label>
-                <input type="number" id="ict" placeholder="Enter...">
-            <br><br>
-            <input type="button" value="Calculate GWA" id="calculate" py-click="getting_gwa">
-        </form>
-        <br>
-        <div id="output1"></div>
-        <br>
-        <div id="output2"></div>
-    </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-12 mb-5">
+                        <label>First Name</label>
+                        <input type="text" class="form-control mb-5" id="fname" placeholder="Enter your first name...">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter your surname...">
+                    </div>
+                    <h4>Enter your grades:</h4>
+                    <div class="col-md-6">
+                        <label>Filipino</label>
+                        <input type="number" class="form-control" id="filipino" placeholder="Enter your Filipino grade...">
+                        <br><br>
+                        <label>English</label>
+                        <input type="number" class="form-control" id="english" placeholder="Enter your English grade...">
+                        <br><br>
+                        <label>Mathematics</label>
+                        <input type="number" class="form-control" id="mathematics" placeholder="Enter your Mathematics grade...">
+                        <br><br>
+                        <label>Science</label>
+                        <input type="number" class="form-control" id="science" placeholder="Enter your Science grade...">
+                        <br><br>
+                        <label>Social Studies</label>
+                        <input type="number" class="form-control" id="ss" placeholder="Enter your Social Studies grade...">
+                        <br><br>
+                        <label>ICT</label>
+                        <input type="number" class="form-control" id="ict" placeholder="Enter your ICT grade...">
+                    </div>
+                    <div class="col-md-6">
+                        <div id="output1"></div>
+                        <br>
+                        <div id="output2"></div>
+                        <br>
+                        <input type="button" class="btn btn-dark" value="Calculate GWA" id="calculate" py-click="getting_gwa">
+                    </div>
+                </div>
+            </form>
+        </div>
 
     <!-- PYSCRIPT -->
     <py-script type="py" src="main.py"></py-script>
