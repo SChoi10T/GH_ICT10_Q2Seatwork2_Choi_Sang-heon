@@ -1,14 +1,15 @@
 # Grade Calculator
 from pyscript import display, document # pyright: ignore[reportMissingImports]
 
-def getting_gwa(e):
-    document.getElementById('output1').innerHTML = "" # Clear Output
-    document.getElementById('output2').innerHTML = "" # Clear Output
+def calculate_gwa(e):
+    document.getElementById('profile_info').innerHTML = ""  # Clear Output
+    document.getElementById('gwa_result').innerHTML = ""    # Clear Output
 
     # Student Details
     first_name = document.getElementById("fname").value.strip()
     surname = document.getElementById("lname").value.strip()
 
+    # Subjects
     fil = int(document.getElementById('filipino').value)
     eng = int(document.getElementById('english').value)
     math = int(document.getElementById('mathematics').value)
@@ -16,14 +17,14 @@ def getting_gwa(e):
     ss = int(document.getElementById('ss').value)
     ict = int(document.getElementById('ict').value)
 
-    grades = [fil, eng, math, sci, ss, ict]
-    units = (3, 5 , 5, 4, 3, 1)
+    grades = [fil, eng, math, sci, ss, ict] # List of subjects
+    units = (3, 5 , 5, 4, 3, 1) # Units of each subject
 
-    total_units = sum(units)
-    weighted_sum = sum(grades[i] * units[i] for i in range(len(grades)))
-    gwa = weighted_sum / total_units
+    # Calculating the GWA
+    total_units = sum(units)    # Getting the sum of the units
+    weighted_sum = sum(grades[i] * units[i] for i in range(len(grades)))    # Multiplies each grade by its subject unit and sum to get the GWA
+    gwa = weighted_sum / total_units    # Weighted sum divided by total units
 
-    # gwa = (fil * units[0]) + (eng * units[1]) + (math * units[2]) + (sci * units[3]) + (ss* units[4]) + (ict * units[5]) // 21
-
-    display(f"Name: {first_name} {surname}", target="output1")
-    display(f"Your General Weighted Average is: {gwa}", target = 'output2')
+    # Displaying the result of inputted values
+    display(f"Name: {first_name} {surname}", target="profile_info")
+    display(f"Your General Weighted Average is: {gwa}", target = 'gwa_result')
